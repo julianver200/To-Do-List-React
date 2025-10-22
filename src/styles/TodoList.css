@@ -1,0 +1,143 @@
+/* Reset default styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;  /* horizontally center */
+  align-items: center;      /* vertically center */
+}
+
+/* The main container — ONE centered box */
+.container {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden; 
+  
+  scrollbar-gutter: stable;
+}
+
+/* Input + button in one row */
+.inputContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.inputContainer button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.inputContainer button:hover {
+  background-color: #0056b3;
+}
+
+/* Task list styling */
+.taskList {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+   flex: 1; /* take all available space between header and footer */
+  overflow-y: auto; /* scroll only this part */
+}
+
+.taskList li {
+  display: flex;                  /* ✅ puts checkbox, text, and button in a row */
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+
+}
+.taskList li input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.taskList li span {
+  flex: 1;                      /* ✅ span takes remaining space */
+  overflow: hidden;             /* ✅ hide overflowing text */
+  white-space: nowrap;          /* ✅ prevent wrapping */
+  text-overflow: ellipsis;      /* ✅ show ... at the end */
+}
+
+.taskList li button {
+  border: none;
+  background-color: transparent;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+.taskList input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}   
+.inputContainer, h1, .taskList{
+    margin-right: -12px;
+}
+.tcdContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    position: sticky;
+    
+}
+#deleteButton{
+  transition: background-color 0.3s ease;
+}
+#deleteButton:hover{
+  background-color: rgba(255, 0, 0, 0.76);
+  border-radius: 20%;
+  color: black;
+}
+#deleteTask:hover{
+  text-decoration: underline;
+}
+#taskCheckbox{
+  cursor: pointer; /* Customize checkbox color */
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+#taskCheckbox:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+#taskCheckbox:checked {
+ accent-color: #ff0000;
+}
+.editInput{
+  flex-grow: 1;  
+}
