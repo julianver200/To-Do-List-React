@@ -9,5 +9,5 @@ export default defineConfig({
         plugins: [['babel-plugin-react-compiler']],
       },
     }),
-  ],
+  ], base: "/To-Do-List-React"
 })
