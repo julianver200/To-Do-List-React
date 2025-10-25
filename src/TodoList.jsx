@@ -27,7 +27,8 @@ const TodoList = () => {
         setNewTask(e.target.value);
     };
 
-    const addTask = () => {
+    const addTask = (e) => {
+        e.preventDefault();
         if(newTask.trim() === "")return;
         
             const task = {text: newTask,
